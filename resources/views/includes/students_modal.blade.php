@@ -14,7 +14,7 @@
                 <div class="form-group">
     <label for="time_out" class="col-sm-3 control-label">Institution</label>
     <div class="col-sm-9">
-        <select class="form-control" name="Institution" id="institutionSelect">
+        <select class="form-control" name="Institution" id="institution" required>
             <option selected disabled>--Make a Selection--</option>
             <?php 
             $conn = new mysqli('localhost', 'root', '', 'graduates');                               
@@ -72,7 +72,7 @@
                 <div class="form-group">
                   	<label for="time_out" class="col-sm-3 control-label">Suffix</label>
                   	<div class="col-sm-9">
-          							<select class="form-control" name="suffix">
+          							<select class="form-control" name="suffix" >
         				   <option value="None" class="form-control" disabled selected>--Make a Selection--</option>
                     	   <option class="form-control" value="Jr.">Jr.</option>
 						   <option class="form-control" value="Sr.">Sr.</option>
@@ -104,7 +104,7 @@
                 <div class="form-group">
               	<label for="time_out" class="col-sm-3 control-label">Scholar Type</label>
                   	<div class="col-sm-9">                  		
-							            <select class="form-control" name="scholarship_type">
+							            <select class="form-control" name="scholarship_type" required>
     							         <option value="None" class="form-control" disabled selected>--Make a Selection--</option>
                            <option class="form-control" value="Regualar College">Regualar College</option>
                            <option class="form-control" value="Regualar IP College">Regualar IP College</option>
@@ -133,7 +133,7 @@
                 <div class="form-group">
                   	<label for="time_out" class="col-sm-3 control-label">Year Level</label>
                   	<div class="col-sm-9">
-          							<select class="form-control" name="Year_level">
+          							<select class="form-control" name="Year_level" required>
         						       <option value="None" class="form-control" disabled selected>--Make a Selection--</option>
                     		   <option class="form-control" value="Grade 7">Grade 7</option>
 							             <option class="form-control" value="Grade 8">Grade 8</option>
