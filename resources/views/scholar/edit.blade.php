@@ -108,50 +108,16 @@
                 </div>
 
                 <div class="form-group">
-                  	<label for="employee" class="col-sm-3 control-label">First Name</label>
+                  	<label for="employee" class="col-sm-3 control-label">Full Name</label>
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="firstname" name="firstname" value = "{{$scholars->firstname}}" required>
+                    	<input type="text" class="form-control" id="fullname" name="fullname" value = "{{$scholars->fullname}}" oninput="this.value = this.value.toUpperCase()" required>
                   	</div>
                 </div>
-                <div class="form-group">
-                    <label for="datepicker_add" class="col-sm-3 control-label">Last Name</label>
-                    <div class="col-sm-9"> 
-          					   <input type="text" class="form-control" id="lastname" name="lastname" value = "{{$scholars->lastname}}" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                  	<label for="employee" class="col-sm-3 control-label">Middle Initial</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="middleinitial" name="middleinitial" value = "{{$scholars->middleinitial}}" maxlength=2 oninput="this.value = this.value.toUpperCase()">
-                  	</div>
-                </div>
-                
                
-
-                <div class="form-group">
-                  	<label for="time_out" class="col-sm-3 control-label">Suffix</label>
-                  	<div class="col-sm-9">
-          							<select class="form-control" name="suffix">
-        				   <option value="None" class="form-control" dvalue = "{{$scholars->suffix}}">{{$scholars->suffix}}</option>
-                    	   <option class="form-control" value="Jr.">Jr.</option>
-						   <option class="form-control" value="Sr.">Sr.</option>
-                           <option class="form-control" value="II">II</option>
-                           <option class="form-control" value="III">III</option>
-                           <option class="form-control" value="IV">IV</option>
-                           <option class="form-control" value="V">V</option>
-                           <option class="form-control" value="VI">VI</option>
-                           <option class="form-control" value="VII">VII</option>
-                           <option class="form-control" value="VIII">VIII</option>
-                           <option class="form-control" value="IX">IX</option>
-                           <option class="form-control" value="X">X</option>
-                      </select>
-                  	</div>
-                </div>
-                
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Family member CARD Member</label>
                     <div class="col-sm-9"> 
-                       <input type="text" class="form-control" id="name_of_member" name="name_of_member" value = "{{$scholars->name_of_member}}" required>
+                       <input type="text" class="form-control" id="name_of_member" name="name_of_member" value = "{{$scholars->name_of_member}}" oninput="this.value = this.value.toUpperCase()" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -229,19 +195,19 @@
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Course</label>
                     <div class="col-sm-9"> 
-                       <input type="text" class="form-control" id="course" name="course" value = "{{$scholars->course}}" required>
+                       <input type="text" class="form-control" id="course" name="course" value = "{{$scholars->course}}" oninput="this.value = this.value.toUpperCase()"required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Contact Number</label>
                     <div class="col-sm-9"> 
-                       <input type="text" class="form-control" id="contact" name="contact" value = "{{$scholars->contact}}" required>
+                       <input type="text" class="form-control" id="contact" name="contact" value = "{{$scholars->contact}}"oninput="this.value = this.value.toUpperCase()" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Address</label>
                     <div class="col-sm-9"> 
-                       <input type="text" class="form-control" id="address" name="Address" value = "{{$scholars->Address}}" required>
+                       <input type="text" class="form-control" id="address" name="Address" value = "{{$scholars->Address}}" oninput="this.value = this.value.toUpperCase()"required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -269,7 +235,7 @@
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Remarks</label>
                     <div class="col-sm-9"> 
-                       <input type="text" class="form-control" id="Remarks" name="Remarks" value = "{{$scholars->Remarks}}" required>
+                       <input type="text" class="form-control" id="Remarks" name="Remarks" value = "{{$scholars->Remarks}}" oninput="this.value = this.value.toUpperCase()" required>
                     </div>
                 </div>
                 

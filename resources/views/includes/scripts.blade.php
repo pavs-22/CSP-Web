@@ -45,7 +45,27 @@
 <script>
   $(function () {
     $('#example1').DataTable({
-      responsive: true
+        "responsive": true,
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{{ route('scholar.fetch-paginate') }}", // Make sure this is the correct route name
+        "columns": [
+            { "data": "Scholar_Code" }, 
+            { "data": "Institution" },
+            { "data": "Unit" },
+            { "data": "Area" },
+            { "data": "fullname" }, // Check the case sensitivity in your JSON keys
+            { "data": "name_of_member" },
+            { "data": "batch" },
+            { "data": "scholarship_type" },
+            { "data": "Year_level" }, // Ensure the key matches with your JSON response
+            { "data": "course" },
+            { "data": "contact" },
+            { "data": "Address" },
+            { "data": "status" },
+            { "data": "Remarks" },
+            // { "data": "action", name: "action", orderable: false, searchable: false }
+        ]
     })
     $('#example2').DataTable({
       'paging'      : true,

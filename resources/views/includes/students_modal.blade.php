@@ -50,44 +50,13 @@
                 
 
                 <div class="form-group">
-                  	<label for="employee" class="col-sm-3 control-label">First Name</label>
+                  	<label for="employee" class="col-sm-3 control-label">Full Name</label>
                   	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="firstname" name="firstname" oninput="this.value = this.value.toUpperCase()" required>
-                  	</div>
-                </div>
-                <div class="form-group">
-                  	<label for="employee" class="col-sm-3 control-label">Middle Initial</label>
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="middleinitial" name="middleinitial" maxlength=2 oninput="this.value = this.value.toUpperCase()">
+                    	<input type="text" class="form-control" id="fullname" name="fullname" oninput="this.value = this.value.toUpperCase()" required>
                   	</div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="datepicker_add" class="col-sm-3 control-label">Last Name</label>
-                    <div class="col-sm-9"> 
-          					   <input type="text" class="form-control" id="lastname" name="lastname" oninput="this.value = this.value.toUpperCase()" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                  	<label for="time_out" class="col-sm-3 control-label">Suffix</label>
-                  	<div class="col-sm-9">
-          							<select class="form-control" name="suffix" >
-        				   <option value="None" class="form-control" disabled selected>--Make a Selection--</option>
-                    	   <option class="form-control" value="Jr.">Jr.</option>
-						   <option class="form-control" value="Sr.">Sr.</option>
-                           <option class="form-control" value="II">II</option>
-                           <option class="form-control" value="III">III</option>
-                           <option class="form-control" value="IV">IV</option>
-                           <option class="form-control" value="V">V</option>
-                           <option class="form-control" value="VI">VI</option>
-                           <option class="form-control" value="VII">VII</option>
-                           <option class="form-control" value="VIII">VIII</option>
-                           <option class="form-control" value="IX">IX</option>
-                           <option class="form-control" value="X">X</option>
-                      </select>
-                  	</div>
-                </div>
+               
                 
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Family member CARD Member</label>

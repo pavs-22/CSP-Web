@@ -31,6 +31,9 @@
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
             </div>
             <div class="box-header with-border">
+              <a href="{{route('scholar.info')}}" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> info</a>
+            </div>
+            <div class="box-header with-border">
               <a href="#addlist" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Add List</a>
             </div>
       
@@ -57,42 +60,6 @@
                   <th style="color: #ffffff">Remarks</th>
                   <th style="color: #ffffff">Action</th>
                 </thead>
-                <tbody>
-                 
-                @foreach($scholars as $scholar)
-            <tr>
-                <td>{{$scholar->Scholar_Code}}</td>
-                <td>{{$scholar->Institution}}</td>
-                <td>{{$scholar->Unit}}</td>
-                <td>{{$scholar->Area}}</td>
-                <td>{{$scholar->firstname}}&nbsp&nbsp{{$scholar->middleinitial}}.&nbsp&nbsp{{$scholar->lastname}}</td>
-                <td>{{$scholar->name_of_member}}</td>
-                <td>{{$scholar->batch}}</td>
-                <td>{{$scholar->scholarship_type}}</td>
-                <td>{{$scholar->Year_level}}</td>
-                <td>{{$scholar->course}}</td>
-                <td>{{$scholar->contact}}</td>
-                <td>{{$scholar->Address}}</td>
-                <td>{{$scholar->status}}</td>
-                <td>{{$scholar->Remarks}}</td>
-                
-
-                
-
-                 
-                          
-                         
-                          <td>
-                          
-                          <a href="{{('')}}" class="btn btn-primary btn-sm btn-flat view" ><i class='fa fa-info'></i> View</a>
-                          <a href="{{route('scholar.account', ['scholar' => $scholar])}}" class="btn btn-primary btn-sm btn-flat delete " ><i class='fa fa-trash'></i> Delete</a>
-                          <a href="{{route('scholar.edit', ['scholar' => $scholar])}}" class="btn btn-success btn-sm btn-flat edit"><i class='fa fa-edit'></i> Update</a>
-                          </td>
-                       
-                 </tr>
-            @endforeach   
-
-                </tbody>
               </table>
               </div>
             </div>

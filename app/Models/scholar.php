@@ -14,10 +14,7 @@ class Scholar extends Model
         'Institution',
         'Unit',
         'Area',
-        'firstname',
-        'lastname',
-        'middleinitial',
-        'suffix',
+        'fullname',
         'name_of_member',
         'batch',
         'scholarship_type',
@@ -28,10 +25,5 @@ class Scholar extends Model
         'status',
         'Remarks',
         'account'
-
-
-        
-
-
     ];
 }

@@ -17,10 +17,7 @@ return new class extends Migration
             $table->string('Institution');
             $table->string('Unit');
             $table->string('Area');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('middleinitial');
-            $table->string('suffix');
+            $table->string('fullname');
             $table->string('name_of_member');
             $table->string('batch');
             $table->string('scholarship_type');
