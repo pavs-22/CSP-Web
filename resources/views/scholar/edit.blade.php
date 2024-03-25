@@ -129,11 +129,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="datepicker_add" class="col-sm-3 control-label">Contact Number</label>
-                    <div class="col-sm-9"> 
-                       <input type="text" class="form-control" id="contact" name="contact" value = "{{$scholar->contact}}"oninput="this.value = this.value.toUpperCase()" required>
-                    </div>
-                </div>
+    <label for="contact" class="col-sm-3 control-label">Contact Number</label>
+    <div class="col-sm-9"> 
+        <input type="text" class="form-control" id="contact" name="contact" pattern="\d{11}" maxlength="11" title="Please enter exactly 11 digits." required>
+        <small class="form-text text-muted">Please enter exactly 11 digits.</small>
+    </div>
+</div>
+
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Address</label>
                     <div class="col-sm-9"> 
