@@ -13,7 +13,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        List of All Students
+        Scholar Information
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -94,10 +94,10 @@
                 <div class="form-group">
               	<label for="time_out" class="col-sm-3 control-label">Scholar Type</label>
                   	<div class="col-sm-9">                  		
-							            <select class="form-control" name="scholarhip_type">
-    							         <option value="None" class="form-control" value = "{{$scholar->scholarhip_type}}">{{$scholar->scholarhip_type}}</option>
-                           <option class="form-control" value="Regualar College">Regualar College</option>
-                           <option class="form-control" value="Regualar IP College">Regualar IP College</option>
+							            <select class="form-control" name="scholarship_type">
+    							         <option class="form-control" value = "{{$scholar->scholarship_type}}">{{$scholar->scholarship_type}}</option>
+                           <option class="form-control" value="Regular College">Regular College</option>
+                           <option class="form-control" value="Regular IP College">Regular IP College</option>
                            <option class="form-control" value="Regular High">Regular High <S></S>chool</option>
                            <option class="form-control" value="Regular Ip High School"> Regular Ip High School</option>
                            <option class="form-control" value="Senior High">Senior High</option>
@@ -124,7 +124,7 @@
                   	<label for="time_out" class="col-sm-3 control-label">Year Level</label>
                   	<div class="col-sm-9">
           							<select class="form-control" name="Year_level">
-        						       <option value="None" class="form-control" value = "{{$scholar->Year_level}}">{{$scholar->Year_level}}</option>
+        						       <option class="form-control" value = "{{$scholar->Year_level}}" >{{$scholar->Year_level}}</option>
                     		   <option class="form-control" value="Grade 7">Grade 7</option>
 							             <option class="form-control" value="Grade 8">Grade 8</option>
                            <option class="form-control" value="Grade 9">Grade 9</option>

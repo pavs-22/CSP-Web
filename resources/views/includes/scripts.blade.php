@@ -93,10 +93,26 @@ function editRecord(id) {
 
 
 function deleteRecord(id) {
-    // Implement logic to handle deletion
-    console.log("Delete record", id);
-    // Example: Confirm deletion and make an AJAX call to delete the record
+    if (confirm("Are you sure you want to delete this record?")) {
+        $.ajax({
+            type: "PUT",
+            url: "{{ route('scholar.softDelete', ['id' => ':id']) }}".replace(':id', id),
+            data: {_token: "{{ csrf_token() }}"},
+            success: function (response) {
+                // Handle success, e.g., show a success message
+                console.log("Record soft deleted successfully");
+                
+                // Refresh DataTable
+                $('#example1').DataTable().ajax.reload();
+            },
+            error: function (xhr, status, error) {
+                // Handle error, e.g., show an error message
+                console.error("Error deleting record:", error);
+            }
+        });
+    }
 }
+
 
 
 </script>

@@ -20,7 +20,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/scholar',[ScholarController::class,'store'])->name('scholar.store');
     Route::get('/scholar/{id}/edit',[ScholarController::class,'edit'])->name('scholar.edit');
     Route::put('/scholar/{id}/', [ScholarController::class, 'update'])->name('scholar.update');
-    Route::get('/scholar/{scholar}/index',[ScholarController::class,'account'])->name('scholar.account');
+    Route::put('/scholar/soft-delete/{id}', [ScholarController::class, 'softDelete'])->name('scholar.softDelete');
+
 
 
 
