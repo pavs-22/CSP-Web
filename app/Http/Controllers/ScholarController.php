@@ -31,6 +31,7 @@ class ScholarController extends Controller
                         ->orWhere('batch', 'like', "%{$searchValue}%")
                         ->orWhere('name_of_member', 'like', "%{$searchValue}%")
                         ->orWhere('Year_level', 'like', "%{$searchValue}%")
+                        ->orWhere('status', 'like', "%{$searchValue}%")
                         ->orWhere('course', 'like', "%{$searchValue}%");
                 });
             });

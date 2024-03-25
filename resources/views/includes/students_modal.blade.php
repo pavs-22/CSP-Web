@@ -174,53 +174,7 @@
            
 
 
-                               <?php 
-                               $conn = new mysqli('localhost', 'root', '', 'graduates');                               
-                               if ($conn->connect_error) {
-                                die("Connection failed: " . $conn->connect_error);
-                               }
-                               $sql ="Select * From scholars WHERE institute NOT LIKE '' GROUP BY institute";
-                               $query = $conn->query($sql);
-                                  while($row = $query->fetch_assoc()){
-                                    $ins = $row['institute'];
-                            ?>
-                            <option value="<?php // echo $ins ?>"><?php // echo $row['institute'] ?></option>
-                            <?php
-                                   } 
-                            ?>
-                    
-           
-
-                               <?php 
-                               $conn = new mysqli('localhost', 'root', '', 'graduates');                               
-                               if ($conn->connect_error) {
-                                die("Connection failed: " . $conn->connect_error);
-                               }
-                               $sql ="Select * From scholars WHERE institute NOT LIKE '' GROUP BY institute";
-                               $query = $conn->query($sql);
-                                  while($row = $query->fetch_assoc()){
-                                    $ins = $row['institute'];
-                            ?>
-                            <option value="<?php // echo $ins ?>"><?php // echo $row['institute'] ?></option>
-                            <?php
-                                   } 
-                            ?>
-
-                               <?php 
-                               $conn = new mysqli('localhost', 'root', '', 'graduates');                               
-                               if ($conn->connect_error) {
-                                die("Connection failed: " . $conn->connect_error);
-                               }
-                               $sql ="Select * From scholars WHERE institute NOT LIKE '' GROUP BY institute";
-                               $query = $conn->query($sql);
-                                  while($row = $query->fetch_assoc()){
-                                    $ins = $row['institute'];
-                            ?>
-                            <option value="<?php // echo $ins ?>"><?php // echo $row['institute'] ?></option>
-                            <?php
-                                   } 
-                            ?>
-                       
+                         
 				
           	</div>
           	<div class="modal-footer">

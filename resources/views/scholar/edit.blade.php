@@ -41,29 +41,19 @@
                 
 
                 <div class="form-group">
-                <label for="time_out" class="col-sm-3 control-label">Unit</label>
-                    <div class="col-sm-9">                      
-                          <select class="form-control" name="Unit">
-                            <option value = "{{$scholar->Unit}}">{{$scholar->Unit}}</option>
-                            
-                            <option value="<?php // echo $unit ?>"><?php // echo $row['Unit'] ?></option>
-                           
-                       </select>
-                    </div>
+                  	<label for="employee" class="col-sm-3 control-label">Unit</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="Unit" name="Unit" value="{{$scholar->Unit}}" oninput="this.value = this.value.toUpperCase()" required>
+                  	</div>
                 </div>
 
-
-                <div class="form-group">
-                <label for="time_out" class="col-sm-3 control-label">Area</label>
-                    <div class="col-sm-9">                      
-                          <select class="form-control" name="Area">
-                            <option value = "{{$scholar->Area}}">{{$scholar->Area}}</option>
-                              
-                            <option value="<?php // echo $area ?>"><?php // echo $row['Area'] ?></option>
-                            
-                       </select>
-                    </div>
+              <div class="form-group">
+                  	<label for="employee" class="col-sm-3 control-label">Area</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="Area" name="Area" value="{{$scholar->Area}}" oninput="this.value = this.value.toUpperCase()" required>
+                  	</div>
                 </div>
+
 
                 <div class="form-group">
                   	<label for="employee" class="col-sm-3 control-label">Full Name</label>
@@ -75,21 +65,14 @@
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Family member CARD Member</label>
                     <div class="col-sm-9"> 
-                       <input type="text" class="form-control" id="name_of_member" name="name_of_member" value = "{{$scholar->name_of_member}}" oninput="this.value = this.value.toUpperCase()" required>
+                       <input type="text" class="form-control" id="name_of_member" name="name_of_member" value="{{$scholar->name_of_member}}" oninput="this.value = this.value.toUpperCase()" required>
                     </div>
                 </div>
                 <div class="form-group">
-                <label for="time_out" class="col-sm-3 control-label">Batch</label>
-                    <div class="col-sm-9">                      
-                          <select class="form-control" name="batch">
-                            <option value = "{{$scholar->batch}}">{{$scholar->batch}}</option>
-                            
-                               
-                            
-                            <option value="<?php // echo $batch ?>"><?php // echo $row['batch'] ?></option>
-                            
-                       </select>
-                    </div>
+                  	<label for="employee" class="col-sm-3 control-label">Batch</label>
+                  	<div class="col-sm-9">
+                    	<input type="text" class="form-control" id="batch" name="batch" value="{{$scholar->batch}}" oninput="this.value = this.value.toUpperCase()" required>
+                  	</div>
                 </div>
                 <div class="form-group">
               	<label for="time_out" class="col-sm-3 control-label">Scholar Type</label>
@@ -160,14 +143,17 @@
                 <div class="form-group">
                 <label for="time_out" class="col-sm-3 control-label">Status</label>
                     <div class="col-sm-9">                      
-                          <select class="form-control" name="status">
-                            <option value = "{{$scholar->status}}">{{$scholar->status}}</option>
-                              
-                            <option value="<?php // echo $st ?>"><?php // echo $row['status'] ?></option>
+                          <select class="form-control" name="status" >
+                            <option value = "{{$scholar->status}}">{{$scholar->Institution}}</option>
+                            <option value="ACTIVE">ACTIVE</option>
+                            <option value="INACTIVE">INACTIVE</option>
+                            <option value="TOTALLY CANCELLED">TOTALLY CANCELLED</option>
+                            <option value="GRADUATED">GRADUATED</option>
+                            <option value="END OF CONTRACT">END OF CONTRACT</option>
                            
                        </select>
                     </div>
-                </div>
+                    </div>
                 <div class="form-group">
                     <label for="datepicker_add" class="col-sm-3 control-label">Remarks</label>
                     <div class="col-sm-9"> 
