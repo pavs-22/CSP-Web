@@ -19,15 +19,15 @@ class ScholarFactory extends Factory
         return [
             'Scholar_Code' => $this->faker->numerify('CSP-####'),
             'Institution' => $this->faker->company(),
-            'Unit' => $this->faker->city(),
-            'Area' => $this->faker->state(),
+            'Unit' => $this->faker->municipality(),
+            'Area' => $this->faker->province(),
             'fullname' => $this->faker->name(),
             'name_of_member' => $this->faker->firstname(),
             'batch' => $this->faker->numberBetween(1, 41), // Assuming batch starts from 1
             'scholarship_type' => 'Regular', // Static value
             'Year_level' => 'grade 12', // Static value
             'course' => 'BSIS', // Static value
-            'contact' => $this->faker->phoneNumber(),
+            'contact' => $this->faker->mobileNumber(),
             'Address' => $this->faker->address(),
             'status' => 'active', // Static value
             'Remarks' => $this->faker->sentence(),

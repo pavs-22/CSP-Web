@@ -30,12 +30,7 @@
             <div class="box-header with-border">
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
             </div>
-            <div class="box-header with-border">
-              <a href="{{route('scholar.info')}}" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> info</a>
-            </div>
-            <div class="box-header with-border">
-              <a href="#addlist" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Add List</a>
-            </div>
+            
       
             <div class="box-body">
               <!-- Wrapping div with overflow-x: auto for horizontal scrolling -->

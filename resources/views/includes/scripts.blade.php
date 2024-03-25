@@ -43,87 +43,62 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 <script>
-  $(function () {
+$(function () {
     $('#example1').DataTable({
         "responsive": true,
         "processing": true,
         "serverSide": true,
-        "ajax": "{{ route('scholar.fetch-paginate') }}", // Make sure this is the correct route name
+        "ajax": "{{ route('scholar.fetch-paginate') }}", // Correct route name
         "columns": [
             { "data": "Scholar_Code" }, 
             { "data": "Institution" },
             { "data": "Unit" },
             { "data": "Area" },
-            { "data": "fullname" }, // Check the case sensitivity in your JSON keys
+            { "data": "fullname" },
             { "data": "name_of_member" },
             { "data": "batch" },
             { "data": "scholarship_type" },
-            { "data": "Year_level" }, // Ensure the key matches with your JSON response
+            { "data": "Year_level" },
             { "data": "course" },
             { "data": "contact" },
             { "data": "Address" },
             { "data": "status" },
             { "data": "Remarks" },
-            // { "data": "action", name: "action", orderable: false, searchable: false }
+            {
+                "data": null,
+                "defaultContent": "",
+                "sortable": false,
+                "render": function (data, type, row) {
+                    return `
+                      <button onclick="viewRecord(${row.id})" class="btn btn-sm btn-info">View</button>
+                      <button onclick="editRecord(${row.id})" class="btn btn-sm btn-primary">Edit</button>
+                      <button onclick="deleteRecord(${row.id})" class="btn btn-sm btn-danger">Delete</button>
+                    `;
+                }
+            }
         ]
-    })
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-    $('#example3').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-    $('#example4').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-    $('#example5').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-    $('#example6').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-    $('#example7').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-    $('#example8').DataTable({
-      'paging'      : true,
-      'lengthChange': true,
-      'searching'   : true,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
+    });
+});
+
+function viewRecord(id) {
+    // Redirect to the details page for the specific record
+    window.location.href = "{{ route('scholar.info', ['id' => ':id']) }}".replace(':id', id);
+}
+
+
+function editRecord(id) {
+    // Redirect to the edit page for the specific record
+    window.location.href = "{{ route('scholar.edit', ['id' => ':id']) }}".replace(':id', id);
+}
+
+
+function deleteRecord(id) {
+    // Implement logic to handle deletion
+    console.log("Delete record", id);
+    // Example: Confirm deletion and make an AJAX call to delete the record
+}
+
+
 </script>
 <script>
 $(function(){
