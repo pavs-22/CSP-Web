@@ -11,6 +11,22 @@ class ScholarController extends Controller
     {
         return view('scholar.index');
     }
+    public function ScholarList()
+    {
+        return view('scholar.ScholarList');
+    }
+    public function college()
+    {
+        return view('scholar/ScholarType.college');
+    }
+    public function highschool()
+    {
+        return view('scholar/ScholarType.highschool');
+    }
+    public function seniorhigh()
+    {
+        return view('scholar/ScholarType.seniorhigh');
+    }
 
     public function fetchPaginate(Request $request)
     {
@@ -21,6 +37,123 @@ class ScholarController extends Controller
 
         $query = Scholar::query()
             ->where('account', true)
+            ->when($searchValue, function ($query, $searchValue) {
+                return $query->where(function ($query) use ($searchValue) {
+                    $query->where('Scholar_Code', 'like', "%{$searchValue}%")
+                        ->orWhere('Institution', 'like', "%{$searchValue}%")
+                        ->orWhere('Unit', 'like', "%{$searchValue}%")
+                        ->orWhere('Area', 'like', "%{$searchValue}%")
+                        ->orWhere('fullname', 'like', "%{$searchValue}%")
+                        ->orWhere('batch', 'like', "%{$searchValue}%")
+                        ->orWhere('name_of_member', 'like', "%{$searchValue}%")
+                        ->orWhere('Year_level', 'like', "%{$searchValue}%")
+                        ->orWhere('status', 'like', "%{$searchValue}%")
+                        ->orWhere('course', 'like', "%{$searchValue}%");
+                });
+            });
+
+        if ($searchValue) {
+            $page = 1;
+        }
+
+        $data = $query->paginate($length, ['*'], 'page', $page);
+
+        return response()->json([
+            'draw' => intval($request->input('draw')),
+            'recordsTotal' => $data->total(),
+            'recordsFiltered' => $data->total(),
+            'data' => $data->items(),
+        ]);
+    }
+
+    public function fetchHighSchool(Request $request)
+{
+    $searchValue = $request->input('search.value');
+    $start = $request->input('start');
+    $length = $request->input('length');
+    $page = $request->input('draw');
+
+    $query = Scholar::query()
+        ->whereIn('Year_level', ['GRADE 7','GRADE 8','GRADE 9','GRADE 10']) // Use whereIn instead of where
+        ->when($searchValue, function ($query, $searchValue) {
+            return $query->where(function ($query) use ($searchValue) {
+                $query->where('Scholar_Code', 'like', "%{$searchValue}%")
+                    ->orWhere('Institution', 'like', "%{$searchValue}%")
+                    ->orWhere('Unit', 'like', "%{$searchValue}%")
+                    ->orWhere('Area', 'like', "%{$searchValue}%")
+                    ->orWhere('fullname', 'like', "%{$searchValue}%")
+                    ->orWhere('batch', 'like', "%{$searchValue}%")
+                    ->orWhere('name_of_member', 'like', "%{$searchValue}%")
+                    ->orWhere('Year_level', 'like', "%{$searchValue}%")
+                    ->orWhere('status', 'like', "%{$searchValue}%")
+                    ->orWhere('course', 'like', "%{$searchValue}%");
+            });
+        });
+
+    if ($searchValue) {
+        $page = 1;
+    }
+
+    $data = $query->paginate($length, ['*'], 'page', $page);
+
+    return response()->json([
+        'draw' => intval($request->input('draw')),
+        'recordsTotal' => $data->total(),
+        'recordsFiltered' => $data->total(),
+        'data' => $data->items(),
+    ]);
+}
+
+
+
+    public function fetchSeniorHigh(Request $request)
+    {
+        $searchValue = $request->input('search.value');
+        $start = $request->input('start');
+        $length = $request->input('length');
+        $page = $request->input('draw');
+
+        $query = Scholar::query()
+            ->whereIn('Year_level', ['GRADE 11','GRADE 12'])
+            ->when($searchValue, function ($query, $searchValue) {
+                return $query->where(function ($query) use ($searchValue) {
+                    $query->where('Scholar_Code', 'like', "%{$searchValue}%")
+                        ->orWhere('Institution', 'like', "%{$searchValue}%")
+                        ->orWhere('Unit', 'like', "%{$searchValue}%")
+                        ->orWhere('Area', 'like', "%{$searchValue}%")
+                        ->orWhere('fullname', 'like', "%{$searchValue}%")
+                        ->orWhere('batch', 'like', "%{$searchValue}%")
+                        ->orWhere('name_of_member', 'like', "%{$searchValue}%")
+                        ->orWhere('Year_level', 'like', "%{$searchValue}%")
+                        ->orWhere('status', 'like', "%{$searchValue}%")
+                        ->orWhere('course', 'like', "%{$searchValue}%");
+                });
+            });
+
+        if ($searchValue) {
+            $page = 1;
+        }
+
+        $data = $query->paginate($length, ['*'], 'page', $page);
+
+        return response()->json([
+            'draw' => intval($request->input('draw')),
+            'recordsTotal' => $data->total(),
+            'recordsFiltered' => $data->total(),
+            'data' => $data->items(),
+        ]);
+    }
+
+
+    public function fetchCollege(Request $request)
+    {
+        $searchValue = $request->input('search.value');
+        $start = $request->input('start');
+        $length = $request->input('length');
+        $page = $request->input('draw');
+
+        $query = Scholar::query()
+            ->where('Year_level', ['FIRST YEAR','SECOND YEAR','THIRD YEAR','FOURTH YEAR','FIFTH YEAR',])
             ->when($searchValue, function ($query, $searchValue) {
                 return $query->where(function ($query) use ($searchValue) {
                     $query->where('Scholar_Code', 'like', "%{$searchValue}%")
@@ -113,7 +246,7 @@ class ScholarController extends Controller
     
         $newScholar = Scholar::create($data);
     
-        return redirect(route('scholar.index'));
+        return redirect(route('scholar.ScholarList'));
     }
 
     public function show($id)
@@ -141,6 +274,6 @@ class ScholarController extends Controller
         $scholar = Scholar::findOrFail($id);
         $scholar->update($request->all());
 
-        return redirect()->route('scholar.index')->with('success', 'Scholar updated successfully');
+        return redirect()->route('scholar.ScholarList')->with('success', 'Scholar updated successfully');
     }
 }

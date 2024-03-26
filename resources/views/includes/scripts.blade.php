@@ -50,7 +50,112 @@ $(function () {
         "serverSide": true,
         "ajax": "{{ route('scholar.fetch-paginate') }}", // Correct route name
         "columns": [
-            { "data": "Scholar_Code" }, 
+          { "data": "Scholar_Code" }, 
+            { "data": "Institution" },
+            { "data": "Unit" },
+            { "data": "Area" },
+            { "data": "fullname" },
+            { "data": "name_of_member" },
+            { "data": "batch" },
+            { "data": "scholarship_type" },
+            { "data": "Year_level" },
+            { "data": "course" },
+            { "data": "contact" },
+            { "data": "Address" },
+            { "data": "status" },
+            { "data": "Remarks" },
+            {
+                "data": null,
+                "defaultContent": "",
+                "sortable": false,
+                "render": function (data, type, row) {
+                    return `
+                      <button onclick="viewRecord(${row.id})" class="btn btn-sm btn-info">View</button>
+                      <button onclick="editRecord(${row.id})" class="btn btn-sm btn-primary">Edit</button>
+                      <button onclick="deleteRecord(${row.id})" class="btn btn-sm btn-danger">Delete</button>
+                    `;
+                }
+            }
+        ]
+    });
+
+    $('#highschool').DataTable({
+        "responsive": true,
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{{ route('scholar.fetch-high-school') }}", // Correct route name
+        "columns": [
+          { "data": "Scholar_Code" }, 
+            { "data": "Institution" },
+            { "data": "Unit" },
+            { "data": "Area" },
+            { "data": "fullname" },
+            { "data": "name_of_member" },
+            { "data": "batch" },
+            { "data": "scholarship_type" },
+            { "data": "Year_level" },
+            { "data": "course" },
+            { "data": "contact" },
+            { "data": "Address" },
+            { "data": "status" },
+            { "data": "Remarks" },
+            {
+                "data": null,
+                "defaultContent": "",
+                "sortable": false,
+                "render": function (data, type, row) {
+                    return `
+                      <button onclick="viewRecord(${row.id})" class="btn btn-sm btn-info">View</button>
+                      <button onclick="editRecord(${row.id})" class="btn btn-sm btn-primary">Edit</button>
+                      <button onclick="deleteRecord(${row.id})" class="btn btn-sm btn-danger">Delete</button>
+                    `;
+                }
+            }
+        ]
+    });
+
+    $('#seniorhigh').DataTable({
+        "responsive": true,
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{{ route('scholar.fetch-senior-high') }}", // Correct route name
+        "columns": [
+          { "data": "Scholar_Code" }, 
+            { "data": "Institution" },
+            { "data": "Unit" },
+            { "data": "Area" },
+            { "data": "fullname" },
+            { "data": "name_of_member" },
+            { "data": "batch" },
+            { "data": "scholarship_type" },
+            { "data": "Year_level" },
+            { "data": "course" },
+            { "data": "contact" },
+            { "data": "Address" },
+            { "data": "status" },
+            { "data": "Remarks" },
+            {
+                "data": null,
+                "defaultContent": "",
+                "sortable": false,
+                "render": function (data, type, row) {
+                    return `
+                      <button onclick="viewRecord(${row.id})" class="btn btn-sm btn-info">View</button>
+                      <button onclick="editRecord(${row.id})" class="btn btn-sm btn-primary">Edit</button>
+                      <button onclick="deleteRecord(${row.id})" class="btn btn-sm btn-danger">Delete</button>
+                    `;
+                }
+            }
+        ]
+    });
+
+    $('#college').DataTable({
+        "responsive": true,
+        "processing": true,
+        "serverSide": true,
+        "ajax": "{{ route('scholar.fetch-college') }}", // Correct route name
+        "columns": [
+          { "data": "Scholar_Code" }, 
             { "data": "Institution" },
             { "data": "Unit" },
             { "data": "Area" },
@@ -85,12 +190,10 @@ function viewRecord(id) {
     window.location.href = "{{ route('scholar.info', ['id' => ':id']) }}".replace(':id', id);
 }
 
-
 function editRecord(id) {
     // Redirect to the edit page for the specific record
     window.location.href = "{{ route('scholar.edit', ['id' => ':id']) }}".replace(':id', id);
 }
-
 
 function deleteRecord(id) {
     if (confirm("Are you sure you want to delete this record?")) {
@@ -101,7 +204,7 @@ function deleteRecord(id) {
             success: function (response) {
                 // Handle success, e.g., show a success message
                 console.log("Record soft deleted successfully");
-                
+
                 // Refresh DataTable
                 $('#example1').DataTable().ajax.reload();
             },

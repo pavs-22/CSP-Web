@@ -14,26 +14,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">REPORTS</li>
-        <li class=""><a href="home.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class=""><a href="{{ route('scholar.index')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="header">MANAGE</li>
         
-        <li><a href="students.php"><i class="fa fa-users"></i> <span>List of Scholars</span></a></li>
-        <!--li class="treeview">
-          <a href="#">
-            <i class="fa fa-building"></i>
-            <span>Institutions</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="cardbank.php"><i class="fa fa-circle-o"></i>CARD BANK Inc</a></li>
-            <li><a href="cardinc.php"><i class="fa fa-circle-o"></i>CARD Inc</a></li>
-            <li><a href="cardsme.php"><i class="fa fa-circle-o"></i>CARD SME</a></li>
-            <li><a href="cardmri.php"><i class="fa fa-circle-o"></i>CARD MRI Rizal Bank</a></li>
-            <li><a href="list.php"><i class="fa fa-circle-o"></i>List of all Areas and Units</a></li>
-          </ul>
-        </li -->
+        <li><a href="{{ route('scholar.ScholarList')}}"><i class="fa fa-users"></i> <span>List of Scholars</span></a></li>
+        
           
         <li class="treeview">
           <a href="#">
@@ -44,11 +29,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="scholars/college.php"><i class="fa fa-circle-o"></i>College</a></li>
-            <li><a href="scholars/highschool.php"><i class="fa fa-circle-o"></i>High School</a></li>
-            <li><a href="scholars/seniorhigh.php"><i class="fa fa-circle-o"></i>Senior High</a></li>
-            <li><a href="scholars/balikeskwela.php"><i class="fa fa-circle-o"></i>Balik-Eskwela</a></li>
-            <li><a href="scholars/dhsp.php"><i class="fa fa-circle-o"></i>DHSP/College</a></li>
+            <li><a href="{{ route('scholar.college')}}"><i class="fa fa-circle-o"></i>College</a></li>
+            <li><a href="{{ route('scholar.highschool')}}"><i class="fa fa-circle-o"></i>High School</a></li>
+            <li><a href="{{ route('scholar.seniorhigh')}}"><i class="fa fa-circle-o"></i>Senior High</a></li>
+            
            
           </ul>
         </li>

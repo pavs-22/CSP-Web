@@ -75,26 +75,25 @@
                   	<div class="col-sm-9">                  		
 							            <select class="form-control" name="scholarship_type" required>
     							         <option value="None" class="form-control" disabled selected>--Make a Selection--</option>
-                           <option class="form-control" value="Regualar College">Regualar College</option>
-                           <option class="form-control" value="Regualar IP College">Regualar IP College</option>
-                           <option class="form-control" value="Regular High">Regular High <S></S>chool</option>
-                           <option class="form-control" value="Regular Ip High School"> Regular Ip High School</option>
-                           <option class="form-control" value="Senior High">Senior High</option>
+                           <option class="form-control" value="REGULAR_COLLEGE">Regualar College</option>
+                           <option class="form-control" value="REGULAR_IP_COLLEGE">Regualar IP College</option>
+                           <option class="form-control" value="REGULAR_HIGH_SCHOOL">Regular High <S></S>chool</option>
+                           <option class="form-control" value="REGULAR_IP_HIGH_SCHOOL"> Regular Ip High School</option>
                            <option class="form-control" value="CAMIA">CAMIA</option>
-                           <option class="form-control" value="CSP 2">CSP 2</option>
-                           <option class="form-control" value="DSHP Anihan">DSHP Anihan</option>
-                           <option class="form-control" value="DSHP Dual Tech">DSHP Dual Tech</option>
-                           <option class="form-control" value="DSHP LUZ VIZ MIN">DSHP LUZ VIZ MIN</option>
-                           <option class="form-control" value="Balik Skwela College">Balik Skwela College</option>
-                           <option class="form-control" value="Balik Skwela High School">Balik Skwela High School</option>
+                           <option class="form-control" value="CSP_2">CSP 2</option>
+                           <option class="form-control" value="DSHP_ANIHAN">DSHP Anihan</option>
+                           <option class="form-control" value="DSHP_DUAL_TECH">DSHP Dual Tech</option>
+                           <option class="form-control" value="DSHP_LUZVIMIN">DSHP LUZVIMIN</option>
+                           <option class="form-control" value="BALIK_ESKWELA_COLLEGE">Balik Skwela College</option>
+                           <option class="form-control" value="BALIK_ESKWELA_HIGH_SCHOOL">Balik Skwela High School</option>
                            <option class="form-control" value="FORBES">FORBES</option>
-                           <option class="form-control" value="Brokenshires">Brokenshires</option>
-                           <option class="form-control" value="MBA BOAT partners">MBA BOAT partners</option>
-                           <option class="form-control" value="Special Scholar">Special Scholar</option>
-                           <option class="form-control" value="MRI Excellence Scholaship">MRI Excellence Scholaship</option>
-                           <option class="form-control" value="CMDI BAY Senior High School">CMDI BAY Senior High School</option>
-                           <option class="form-control" value="CMDI TAGUM Senior High School">CMDI TAGUM Senior High School</option>
-                           <option class="form-control" value="CMDI BAY College">CMDI BAY College</option>
+                           <option class="form-control" value="BROKENSHIRE">Brokenshires</option>
+                           <option class="form-control" value="MBA_BOAT_PARTNERS">MBA BOAT partners</option>
+                           <option class="form-control" value="SPECIAL_SCHOLAR">Special Scholar</option>
+                           <option class="form-control" value="MRI_EXCELLENCE_SCHOLARSHIP">MRI Excellence Scholaship</option>
+                           <option class="form-control" value="CMDI_BAY_SENIOR_HIGH_SCHOOL">CMDI BAY Senior High School</option>
+                           <option class="form-control" value="CMDI_TAGUM_SENIOR_HIGH_SCHOOL">CMDI TAGUM Senior High School</option>
+                           <option class="form-control" value="CMDI_BAY_COLLEGE">CMDI BAY College</option>
                            <option class="form-control" value="CMDI">CMDI</option>
                        </select>
                   	</div>
@@ -104,17 +103,17 @@
                   	<div class="col-sm-9">
           							<select class="form-control" name="Year_level" required>
         						       <option value="None" class="form-control" disabled selected>--Make a Selection--</option>
-                    		   <option class="form-control" value="Grade 7">Grade 7</option>
-							             <option class="form-control" value="Grade 8">Grade 8</option>
-                           <option class="form-control" value="Grade 9">Grade 9</option>
-                           <option class="form-control" value="Grade 10">Grade 10</option>
-                           <option class="form-control" value="Grade 11">Grade 11</option>
-                           <option class="form-control" value="Grade 12">Grade 12</option>
-                           <option class="form-control" value="First Year">First Year</option>
-                           <option class="form-control" value="Second Year">Second Year</option>
-                           <option class="form-control" value="Third Year">Third Year</option>
-                           <option class="form-control" value="Fourth Year">Fourth Year</option>
-                           <option class="form-control" value="Fourth Year">Fifth Year</option>
+                    		   <option class="form-control" value="GRADE_7">Grade 7</option>
+							             <option class="form-control" value="GRADE_8">Grade 8</option>
+                           <option class="form-control" value="GRADE_9">Grade 9</option>
+                           <option class="form-control" value="GRADE_10">Grade 10</option>
+                           <option class="form-control" value="GRADE_11">Grade 11</option>
+                           <option class="form-control" value="GRADE_12">Grade 12</option>
+                           <option class="form-control" value="FIRST_YEAR">First Year</option>
+                           <option class="form-control" value="SECOND_YEAR">Second Year</option>
+                           <option class="form-control" value="THIRD_YEARr">Third Year</option>
+                           <option class="form-control" value="FOURTH_YEAR">Fourth Year</option>
+                           <option class="form-control" value="FIFTH_YEAR">Fifth Year</option>
                       </select>
                   	</div>
                 </div>
@@ -148,7 +147,7 @@
                             <option value="INACTIVE">INACTIVE</option>
                             <option value="TOTALLY CANCELLED">TOTALLY CANCELLED</option>
                             <option value="GRADUATED">GRADUATED</option>
-                            <option value="END OF CONTRACT">END OF CONTRACT</option>
+                            <option value="END_OF_CONTRACT">END OF CONTRACT</option>
                            
                        </select>
                     </div>
