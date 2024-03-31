@@ -16,10 +16,10 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/scholar',[ScholarController::class,'index'])->name('scholar.index');
 
-    Route::get('/scholar/ScholarList',[ScholarController::class,'ScholarList'])->name('scholar.ScholarList');
+    Route::get('/scholar/list',[ScholarController::class,'list'])->name('scholar.list');
     Route::get('/scholar/college',[ScholarController::class,'college'])->name('scholar.college');
-    Route::get('/scholar/highschool',[ScholarController::class,'highschool'])->name('scholar.highschool');
-    Route::get('/scholar/seniorhigh',[ScholarController::class,'seniorhigh'])->name('scholar.seniorhigh');
+    Route::get('/scholar/highschool',[ScholarController::class,'highSchool'])->name('scholar.highschool');
+    Route::get('/scholar/seniorhigh',[ScholarController::class,'seniorHigh'])->name('scholar.seniorhigh');
     Route::get('/scholar.{id}/info', [ScholarController::class, 'show'])->name('scholar.info');
     Route::get('/scholar/fetch-paginate', [ScholarController::class, 'fetchPaginate'])->name('scholar.fetch-paginate');
     Route::get('/scholar/fetch-high-school', [ScholarController::class, 'fetchHighSchool'])->name('scholar.fetch-high-school');
@@ -28,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/scholar',[ScholarController::class,'store'])->name('scholar.store');
     Route::get('/scholar/{id}/edit',[ScholarController::class,'edit'])->name('scholar.edit');
     Route::put('/scholar/{id}/', [ScholarController::class, 'update'])->name('scholar.update');
-    Route::put('/scholar/soft-delete/{id}', [ScholarController::class, 'softDelete'])->name('scholar.softDelete');
+    Route::put('/scholar/soft-delete/{id}', [ScholarController::class, 'softDelete'])->name('scholar.softdelete');
 
 
 

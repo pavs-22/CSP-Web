@@ -7,25 +7,28 @@ use App\Models\Scholar;
 
 class ScholarController extends Controller
 {
+    // Returns scholar dashboard
     public function index()
     {
         return view('scholar.index');
     }
-    public function ScholarList()
+
+    // Returns list of scholars
+    public function list()
     {
-        return view('scholar.ScholarList');
+        return view('scholar.list');
     }
     public function college()
     {
-        return view('scholar/ScholarType.college');
+        return view('scholar/scholartype.college');
     }
-    public function highschool()
+    public function highSchool()
     {
-        return view('scholar/ScholarType.highschool');
+        return view('scholar/scholartype.highschool');
     }
-    public function seniorhigh()
+    public function seniorHigh()
     {
-        return view('scholar/ScholarType.seniorhigh');
+        return view('scholar/scholartype.seniorhigh');
     }
 
     public function fetchPaginate(Request $request)
@@ -39,14 +42,14 @@ class ScholarController extends Controller
             ->where('account', true)
             ->when($searchValue, function ($query, $searchValue) {
                 return $query->where(function ($query) use ($searchValue) {
-                    $query->where('Scholar_Code', 'like', "%{$searchValue}%")
-                        ->orWhere('Institution', 'like', "%{$searchValue}%")
-                        ->orWhere('Unit', 'like', "%{$searchValue}%")
-                        ->orWhere('Area', 'like', "%{$searchValue}%")
+                    $query->where('scholar_Code', 'like', "%{$searchValue}%")
+                        ->orWhere('institution', 'like', "%{$searchValue}%")
+                        ->orWhere('unit', 'like', "%{$searchValue}%")
+                        ->orWhere('area', 'like', "%{$searchValue}%")
                         ->orWhere('fullname', 'like', "%{$searchValue}%")
                         ->orWhere('batch', 'like', "%{$searchValue}%")
                         ->orWhere('name_of_member', 'like', "%{$searchValue}%")
-                        ->orWhere('Year_level', 'like', "%{$searchValue}%")
+                        ->orWhere('year_level', 'like', "%{$searchValue}%")
                         ->orWhere('status', 'like', "%{$searchValue}%")
                         ->orWhere('course', 'like', "%{$searchValue}%");
                 });
@@ -74,19 +77,19 @@ class ScholarController extends Controller
     $page = $request->input('draw');
 
     $query = Scholar::query()
-        ->whereIn('Year_level', ['GRADE 7','GRADE 8','GRADE 9','GRADE 10']) // Use whereIn instead of where
+        ->whereIn('year_level', ['GRADE 7','GRADE 8','GRADE 9','GRADE 10']) // Use whereIn instead of where
         ->when($searchValue, function ($query, $searchValue) {
             return $query->where(function ($query) use ($searchValue) {
-                $query->where('Scholar_Code', 'like', "%{$searchValue}%")
-                    ->orWhere('Institution', 'like', "%{$searchValue}%")
-                    ->orWhere('Unit', 'like', "%{$searchValue}%")
-                    ->orWhere('Area', 'like', "%{$searchValue}%")
-                    ->orWhere('fullname', 'like', "%{$searchValue}%")
-                    ->orWhere('batch', 'like', "%{$searchValue}%")
-                    ->orWhere('name_of_member', 'like', "%{$searchValue}%")
-                    ->orWhere('Year_level', 'like', "%{$searchValue}%")
-                    ->orWhere('status', 'like', "%{$searchValue}%")
-                    ->orWhere('course', 'like', "%{$searchValue}%");
+                $query->where('scholar_Code', 'like', "%{$searchValue}%")
+                ->orWhere('institution', 'like', "%{$searchValue}%")
+                ->orWhere('unit', 'like', "%{$searchValue}%")
+                ->orWhere('area', 'like', "%{$searchValue}%")
+                ->orWhere('fullname', 'like', "%{$searchValue}%")
+                ->orWhere('batch', 'like', "%{$searchValue}%")
+                ->orWhere('name_of_member', 'like', "%{$searchValue}%")
+                ->orWhere('year_level', 'like', "%{$searchValue}%")
+                ->orWhere('status', 'like', "%{$searchValue}%")
+                ->orWhere('course', 'like', "%{$searchValue}%");
             });
         });
 
@@ -114,17 +117,17 @@ class ScholarController extends Controller
         $page = $request->input('draw');
 
         $query = Scholar::query()
-            ->whereIn('Year_level', ['GRADE 11','GRADE 12'])
+            ->whereIn('year_level', ['GRADE 11','GRADE 12'])
             ->when($searchValue, function ($query, $searchValue) {
                 return $query->where(function ($query) use ($searchValue) {
-                    $query->where('Scholar_Code', 'like', "%{$searchValue}%")
-                        ->orWhere('Institution', 'like', "%{$searchValue}%")
-                        ->orWhere('Unit', 'like', "%{$searchValue}%")
-                        ->orWhere('Area', 'like', "%{$searchValue}%")
+                    $query->where('scholar_Code', 'like', "%{$searchValue}%")
+                        ->orWhere('institution', 'like', "%{$searchValue}%")
+                        ->orWhere('unit', 'like', "%{$searchValue}%")
+                        ->orWhere('area', 'like', "%{$searchValue}%")
                         ->orWhere('fullname', 'like', "%{$searchValue}%")
                         ->orWhere('batch', 'like', "%{$searchValue}%")
                         ->orWhere('name_of_member', 'like', "%{$searchValue}%")
-                        ->orWhere('Year_level', 'like', "%{$searchValue}%")
+                        ->orWhere('year_level', 'like', "%{$searchValue}%")
                         ->orWhere('status', 'like', "%{$searchValue}%")
                         ->orWhere('course', 'like', "%{$searchValue}%");
                 });
@@ -153,17 +156,17 @@ class ScholarController extends Controller
         $page = $request->input('draw');
 
         $query = Scholar::query()
-            ->where('Year_level', ['FIRST YEAR','SECOND YEAR','THIRD YEAR','FOURTH YEAR','FIFTH YEAR',])
+            ->where('year_level', ['FIRST YEAR','SECOND YEAR','THIRD YEAR','FOURTH YEAR','FIFTH YEAR',])
             ->when($searchValue, function ($query, $searchValue) {
                 return $query->where(function ($query) use ($searchValue) {
-                    $query->where('Scholar_Code', 'like', "%{$searchValue}%")
-                        ->orWhere('Institution', 'like', "%{$searchValue}%")
-                        ->orWhere('Unit', 'like', "%{$searchValue}%")
-                        ->orWhere('Area', 'like', "%{$searchValue}%")
+                    $query->where('scholar_Code', 'like', "%{$searchValue}%")
+                        ->orWhere('institution', 'like', "%{$searchValue}%")
+                        ->orWhere('unit', 'like', "%{$searchValue}%")
+                        ->orWhere('area', 'like', "%{$searchValue}%")
                         ->orWhere('fullname', 'like', "%{$searchValue}%")
                         ->orWhere('batch', 'like', "%{$searchValue}%")
                         ->orWhere('name_of_member', 'like', "%{$searchValue}%")
-                        ->orWhere('Year_level', 'like', "%{$searchValue}%")
+                        ->orWhere('year_level', 'like', "%{$searchValue}%")
                         ->orWhere('status', 'like', "%{$searchValue}%")
                         ->orWhere('course', 'like', "%{$searchValue}%");
                 });
@@ -202,37 +205,36 @@ class ScholarController extends Controller
         }
     
         $data = $request->validate([
-            'Institution'=> 'nullable',
-            'Unit'=> 'nullable',
-            'Area'=> 'nullable',
+            'institution'=> 'nullable',
+            'unit'=> 'nullable',
+            'area'=> 'nullable',
             'fullname'=> 'nullable',
             'name_of_member'=> 'nullable', // Changed from 'name of member' to 'name_of_member' for consistency
             'batch'=> 'nullable',
             'scholarship_type'=> 'nullable', // Changed from 'scholarship type' to 'scholarship_type' for consistency
-            'Year_level'=> 'nullable', // Typo corrected from 'Yearl_level' to 'Year_level'
+            'year_level'=> 'nullable', // Typo corrected from 'Yearl_level' to 'Year_level'
             'course'=> 'nullable',
             'contact'=> 'nullable',
             'Address'=> 'nullable',
             'status'=> 'nullable',
-            'Remarks'=> 'nullable',
-            
+            'remarks'=> 'nullable',
         ]);
     
         // Set default values for each field if they are not provided
         $defaults = [
-            'Institution' => ' ',
-            'Unit' => ' ',
-            'Area'=> ' ',
+            'institution' => ' ',
+            'unit' => ' ',
+            'area'=> ' ',
             'fullname' => ' ',
             'name_of_member' => ' ',
             'batch' => ' ',
             'scholarship_type' => ' ',
-            'Year_level' => ' ', // Typo corrected from 'Yearl_level' to 'Year_level'
+            'year_level' => ' ', // Typo corrected from 'Yearl_level' to 'Year_level'
             'course' => ' ',
             'contact' => '0',
-            'Address' => ' ',
+            'address' => ' ',
             'status' => ' ',
-            'Remarks' => ' ',
+            'remarks' => ' ',
         ];
     
         foreach ($defaults as $key => $default) {
@@ -241,12 +243,12 @@ class ScholarController extends Controller
             }
         }
     
-        $data['Scholar_Code'] = $newScholarCode;
+        $data['scholar_code'] = $newScholarCode;
         $data['account'] = true; // Assign the generated Scholar_Code
     
         $newScholar = Scholar::create($data);
     
-        return redirect(route('scholar.ScholarList'));
+        return redirect(route('scholar.list'));
     }
 
     public function show($id)
@@ -274,6 +276,6 @@ class ScholarController extends Controller
         $scholar = Scholar::findOrFail($id);
         $scholar->update($request->all());
 
-        return redirect()->route('scholar.ScholarList')->with('success', 'Scholar updated successfully');
+        return redirect()->route('scholar.list')->with('success', 'Scholar updated successfully.');
     }
 }

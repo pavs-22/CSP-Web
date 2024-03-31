@@ -1,47 +1,45 @@
 <!-- jQuery 3 -->
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="{{asset('/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{asset('/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- DataTables -->
-<script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="{{asset('/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{asset('/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <!-- Morris.js charts -->
-<script src="../bower_components/raphael/raphael.min.js"></script>
-<script src="../bower_components/morris.js/morris.min.js"></script>
+<script src="{{asset('/bower_components/raphael/raphael.min.js')}}"></script>
+<script src="{{asset('/bower_components/morris.js/morris.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="../bower_components/chart.js/Chart.js"></script>
+<script src="{{asset('/bower_components/chart.js/Chart.js')}}"></script>
 <!-- Sparkline -->
-<script src="../bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<script src="{{asset('/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
 <!-- jvectormap -->
-<script src="../plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="../plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="{{asset('/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
+<script src="{{asset('/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
 <!-- jQuery Knob Chart -->
-<script src="../bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<script src="{{asset('/bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
-<script src="../bower_components/moment/min/moment.min.js"></script>
-<script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="{{asset('/bower_components/moment/min/moment.min.js')}}"></script>
+<script src="{{asset('/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 <!-- datepicker -->
-<script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="{{asset('/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <!-- bootstrap time picker -->
-<script src="../plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<script src="{{asset('/plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="{{asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
 <!-- Slimscroll -->
-<script src="../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="{{asset('/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
-<script src="../bower_components/fastclick/lib/fastclick.js"></script>
+<script src="{{asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="../dist/js/adminlte.min.js"></script>
+<script src="{{asset('/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
+<script src="{{asset('/dist/js/pages/dashboard.js')}}"></script>
 <script>
 $(function () {
     $('#example1').DataTable({
@@ -50,20 +48,20 @@ $(function () {
         "serverSide": true,
         "ajax": "{{ route('scholar.fetch-paginate') }}", // Correct route name
         "columns": [
-          { "data": "Scholar_Code" }, 
-            { "data": "Institution" },
-            { "data": "Unit" },
-            { "data": "Area" },
+          { "data": "scholar_code" }, 
+            { "data": "institution" },
+            { "data": "unit" },
+            { "data": "area" },
             { "data": "fullname" },
             { "data": "name_of_member" },
             { "data": "batch" },
             { "data": "scholarship_type" },
-            { "data": "Year_level" },
+            { "data": "year_level" },
             { "data": "course" },
             { "data": "contact" },
-            { "data": "Address" },
+            { "data": "address" },
             { "data": "status" },
-            { "data": "Remarks" },
+            { "data": "remarks" },
             {
                 "data": null,
                 "defaultContent": "",
@@ -85,20 +83,20 @@ $(function () {
         "serverSide": true,
         "ajax": "{{ route('scholar.fetch-high-school') }}", // Correct route name
         "columns": [
-          { "data": "Scholar_Code" }, 
-            { "data": "Institution" },
-            { "data": "Unit" },
-            { "data": "Area" },
+          { "data": "scholar_code" }, 
+            { "data": "institution" },
+            { "data": "unit" },
+            { "data": "area" },
             { "data": "fullname" },
             { "data": "name_of_member" },
             { "data": "batch" },
             { "data": "scholarship_type" },
-            { "data": "Year_level" },
+            { "data": "year_level" },
             { "data": "course" },
             { "data": "contact" },
-            { "data": "Address" },
+            { "data": "address" },
             { "data": "status" },
-            { "data": "Remarks" },
+            { "data": "remarks" },
             {
                 "data": null,
                 "defaultContent": "",
@@ -120,20 +118,20 @@ $(function () {
         "serverSide": true,
         "ajax": "{{ route('scholar.fetch-senior-high') }}", // Correct route name
         "columns": [
-          { "data": "Scholar_Code" }, 
-            { "data": "Institution" },
-            { "data": "Unit" },
-            { "data": "Area" },
+          { "data": "scholar_code" }, 
+            { "data": "institution" },
+            { "data": "unit" },
+            { "data": "area" },
             { "data": "fullname" },
             { "data": "name_of_member" },
             { "data": "batch" },
             { "data": "scholarship_type" },
-            { "data": "Year_level" },
+            { "data": "year_level" },
             { "data": "course" },
             { "data": "contact" },
-            { "data": "Address" },
+            { "data": "address" },
             { "data": "status" },
-            { "data": "Remarks" },
+            { "data": "remarks" },
             {
                 "data": null,
                 "defaultContent": "",
@@ -155,20 +153,20 @@ $(function () {
         "serverSide": true,
         "ajax": "{{ route('scholar.fetch-college') }}", // Correct route name
         "columns": [
-          { "data": "Scholar_Code" }, 
-            { "data": "Institution" },
-            { "data": "Unit" },
-            { "data": "Area" },
+          { "data": "scholar_Code" }, 
+            { "data": "institution" },
+            { "data": "unit" },
+            { "data": "area" },
             { "data": "fullname" },
             { "data": "name_of_member" },
             { "data": "batch" },
             { "data": "scholarship_type" },
-            { "data": "Year_level" },
+            { "data": "year_level" },
             { "data": "course" },
             { "data": "contact" },
-            { "data": "Address" },
+            { "data": "address" },
             { "data": "status" },
-            { "data": "Remarks" },
+            { "data": "remarks" },
             {
                 "data": null,
                 "defaultContent": "",
@@ -199,7 +197,7 @@ function deleteRecord(id) {
     if (confirm("Are you sure you want to delete this record?")) {
         $.ajax({
             type: "PUT",
-            url: "{{ route('scholar.softDelete', ['id' => ':id']) }}".replace(':id', id),
+            url: "{{ route('scholar.softdelete', ['id' => ':id']) }}".replace(':id', id),
             data: {_token: "{{ csrf_token() }}"},
             success: function (response) {
                 // Handle success, e.g., show a success message
@@ -215,9 +213,6 @@ function deleteRecord(id) {
         });
     }
 }
-
-
-
 </script>
 <script>
 $(function(){

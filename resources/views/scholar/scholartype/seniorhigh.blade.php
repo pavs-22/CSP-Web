@@ -1,4 +1,5 @@
 
+
 @include('includes/header')
 <body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
@@ -35,7 +36,7 @@
             <div class="box-body">
               <!-- Wrapping div with overflow-x: auto for horizontal scrolling -->
               <div style="overflow-x:auto;">
-                <table id="example1" class="table table-bordered">
+                <table id="seniorhigh" class="table table-bordered">
                   <thead style="background-color: #21ac21">
 
 <!--                  <th class="hidden"></th>-->
