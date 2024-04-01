@@ -13,22 +13,21 @@ return new class extends Migration
     {
         Schema::create('scholars', function (Blueprint $table) {
             $table->id();
-            $table->string('Scholar_Code');
-            $table->string('Institution');
-            $table->string('Unit');
-            $table->string('Area');
+            $table->string('scholar_code');
+            $table->string('institution');
+            $table->string('unit');
+            $table->string('area');
             $table->string('fullname');
             $table->string('name_of_member');
             $table->string('batch');
             $table->string('scholarship_type');
-            $table->string('Year_level');
+            $table->string('year_level');
             $table->string('course');
             $table->string('contact');
-            $table->string('Address');
+            $table->string('address');
             $table->string('status');
-            $table->string('Remarks');
+            $table->string('remarks');
             $table->boolean('account');
-
             $table->timestamps(); // Adds created_at and updated_at columns
         });
     }

@@ -10,20 +10,20 @@ class Scholar extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Scholar_Code',
-        'Institution',
-        'Unit',
-        'Area',
+        'scholar_code',
+        'institution',
+        'unit',
+        'area',
         'fullname',
         'name_of_member',
         'batch',
         'scholarship_type',
-        'Year_level',
+        'year_level',
         'course',
         'contact',
-        'Address',
+        'address',
         'status',
-        'Remarks',
+        'remarks',
         'account'
     ];
 }
